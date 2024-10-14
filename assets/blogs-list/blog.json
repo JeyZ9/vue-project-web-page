@@ -1,46 +1,4 @@
 {
-    "blogNew": [
-        {
-            "id": 1,
-            "name": "The Evolution of Quantum Computing",
-            "description": "Quantum computing is poised to revolutionize the way we solve complex problems. Explore the latest advancements and potential applications."
-        },
-        {
-            "id": 2,
-            "name": "AI-Powered Code Generation: The Future of Software Development",
-            "description": "Artificial Intelligence is making significant strides in generating and optimizing code. Discover how this technology is reshaping the software industry."
-        },
-        {
-            "id": 3,
-            "name": "The Importance of Cybersecurity in the Era of IoT",
-            "description": "As the Internet of Things expands, so do the cybersecurity risks. Learn how to protect devices and networks in this connected world."
-        }
-    ],
-
-    "blogRank": [
-        {
-            "id": 1,
-            "rank": "01",
-            "name": "Mastering Cloud-Native Development",
-            "description": "A deep dive into cloud-native architecture and how it’s transforming modern software development.",
-            "image": "rank1"
-        },
-        {
-            "id": 2,
-            "rank": "02",
-            "name": "Top 5 Data Structures Every Developer Should Know",
-            "description": "An overview of the most important data structures that every software engineer should master for efficient problem-solving.",
-            "image": "rank2"
-        },
-        {
-            "id": 3,
-            "rank": "03",
-            "name": "The Rise of Containerization: Docker and Beyond",
-            "description": "How containerization is changing the way applications are developed and deployed, with a focus on Docker and Kubernetes.",
-            "image": "rank3"
-        }
-    ],
-
     "blogs": [
         {
             "id": 1,
