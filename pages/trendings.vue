@@ -7,8 +7,8 @@
                 This is The Trendings Blogs Page
             </p>
         </div>
-        <div class="flex flex-col gap-4">
-            <div v-for="(blog, i) in blogList" :key="blog.id" class="grid grid-cols-7 h-[150px] bg-white shadow-lg overflow-hidden">
+        <div class="flex flex-col gap-4" v-if="Array.isArray(data) && data.length > 0">
+            <div v-for="(blog, i) in data" :key="blog.id" class="grid grid-cols-7 h-[150px] bg-white shadow-lg overflow-hidden">
                 <!-- number -->
                 <div class="flex items-center justify-center">
                     <p class="text-[15px] text-[#505050]">{{ i+1 }}</p>
@@ -29,7 +29,7 @@
                 </div>
                 <!-- image -->
                 <div class="w-[155px] overflow-hidden flex items-center justify-center">
-                    <img :src="`/images/blogs/${blog.image}.jpg`" :alt="blog.name" class="object-cover">
+                    <img :src="`${config.public.urlImage}/${blog.image}`" :alt="blog.name" class="object-cover">
                 </div>
                 <!-- button -->
                 <div class="flex items-center justify-center">
@@ -43,6 +43,9 @@
 <script setup lang="ts">
     import blog from '@/assets/blogs-list/blog.json';
 
-    const blogList = blog.blogs.filter(item => (item.id));
+    // const blogList = blog.blogs.filter(item => (item.id));
+    const { data, error, loading, fetchData } = useApi();
+    const config = useRuntimeConfig();
+    fetchData("/blogs")
 
 </script>

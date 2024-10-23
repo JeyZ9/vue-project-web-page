@@ -9,18 +9,23 @@
         </div>
         <div class="mt-10">
             <h1 class="title-field">Software Engineering</h1>
-            <CardNum :blogList="blogListSE" />
+            <CardNum :blogList="seData" />
         </div>
         <div class="mt-10">
-            <h1 class="title-field">Computer Science</h1>
-            <CardNum :blogList="blogListCS" />
+            <h1 class="title-field">Cybersecurity</h1>
+            <CardNum :blogList="csData" />
         </div>
     </main>
 </template>
 
 <script setup lang="ts">
-    import blog from '@/assets/blogs-list/blog.json'
+    // import blog from '@/assets/blogs-list/blog.json'
 
-    const blogListSE = blog.blogs.filter(item => (item.field == "Software Engineering"));
-    const blogListCS = blog.blogs.filter(item => (item.field == "Computer Science"));
+    // const blogListSE = blog.blogs.filter(item => (item.field == "Software Engineering"));
+    // const blogListCS = blog.blogs.filter(item => (item.field == "Computer Science"));
+    const { data:seData, error, loading, fetchData:seFetch } = useApi();
+    const { data:csData, fetchData:csFetch } = useApi();
+    const config = useRequestEvent();
+    seFetch("/blogs/field/Software%20Engineering")
+    csFetch("/blogs/field/Cybersecurity")
 </script>

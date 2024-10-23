@@ -1,10 +1,10 @@
 <template>
     <!-- This section shows the most viewed blogs. -->
-    <section class="grid grid-cols-3 gap-x-[25px] my-[4rem]">
+    <section class="grid grid-cols-3 gap-x-[25px] my-[4rem]" v-if="Array.isArray(props.blogList) && props.blogList.length > 0">
             <div v-for="(blog, i) in props.blogList.slice(0, 3)" :key="blog.id">
                 <NuxtLink :to="`/blogs/${blog.id}`" class="flex  gap-x-5">
                     <div class="w-[110px] h-[150px] flex justify-end">
-                        <img :src="`/images/blogs/${blog.image}.jpg`" :alt="blog.name" class="h-full w-full object-cover">
+                        <img :src="`${config.public.urlImage}/${blog.image}`" :alt="blog.name" class="h-full w-full object-cover">
                         <!-- <div :style="backgroundImage: url(`/images/${blog.image}.jpg`)"  class="h-full w-auto"></div> -->
                     </div>
                     <!-- blog title and description -->
@@ -21,11 +21,12 @@
                     </div>
                 </NuxtLink>
             </div>
-        </section>
+    </section>
 </template>
 
 <script setup lang="ts">
 const props = defineProps(['blogList'])
+const config = useRuntimeConfig();
 </script>
 
 <style scoped>
